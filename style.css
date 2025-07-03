@@ -1,0 +1,275 @@
+/* Windows Phone 8.1 Metro Design - Same as Comic Reader */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.4;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 30rem;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #000000;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background: none;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    text-align: left;
+    border-bottom: none;
+    display: flex;
+    align-items: start;
+    width: 100%;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.0625rem;
+    text-align: left;
+    padding-left: 0;
+}
+
+.subtitle {
+    font-size: 3rem;
+    font-weight: 200;
+    margin-bottom: 1rem;
+}
+
+.search-container {
+    display: flex;
+    margin-top: 0.625rem;
+    padding-left: 0;
+    width: 100%;
+}
+
+.search-container .search-input {
+    margin-right: 0.625rem;
+}
+
+.search-input {
+    flex: 1;
+    padding: 0.9375rem;
+    font-size: 1.125rem;
+    background-color: black;
+    border: 2px solid white;
+    color: #ffffff;
+    border-radius: 0;
+    outline: none;
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: #999999;
+}
+
+.search-button {
+    padding: 0.9375rem 1.5625rem;
+    font-size: 1.125rem;
+    font-weight: 400;
+    background-color: black;
+    color: #ffffff;
+    border: 2px solid white;
+    cursor: pointer;
+    text-transform: capitalize;
+    letter-spacing: 0.0625rem;
+}
+
+/* Main Content */
+.main-content {
+    padding: 0 1.5rem 0 1.5rem;
+}
+
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 200;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    text-transform: lowercase;
+    color: #00a608;
+    letter-spacing: 0.03125rem;
+    border-bottom: none;
+    padding-bottom: 0;
+    text-align: left;
+    padding-left: 0;
+}
+
+/* Loading Section */
+.loading-section {
+    margin-bottom: 1.5rem;
+}
+
+.loading-card {
+    border: 2px solid #ffffff;
+    text-align: center;
+    background-color: #000000;
+    transition: all 0.2s ease;
+    padding-top: 2rem;
+}
+
+.loading-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.loading-text {
+    font-size: 1rem;
+    font-weight: 200;
+    color: #cccccc;
+    line-height: 1.4;
+}
+
+/* Result Section */
+.result-section {
+    margin-bottom: 1.5rem;
+}
+
+.result-card {
+    border: 2px solid #ffffff;
+    text-align: center;
+    background-color: #000000;
+    transition: all 0.2s ease;
+    padding-top: 2rem;
+}
+
+.result-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.result-title {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+    text-transform: capitalize;
+    letter-spacing: 0.0625rem;
+}
+
+.result-message {
+    font-size: 1rem;
+    font-weight: 200;
+    color: #cccccc;
+    line-height: 1.4;
+}
+
+/* Welcome Section */
+.welcome-section {
+    margin-bottom: 1.5rem;
+}
+
+.welcome-card {
+    border: 2px solid #ffffff;
+    text-align: center;
+    padding: 2rem;
+    background-color: #000000;
+    transition: all 0.2s ease;
+}
+
+.welcome-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+.welcome-text {
+    font-size: 1rem;
+    font-weight: 200;
+    color: #cccccc;
+    line-height: 1.4;
+}
+
+/* Valid/Invalid States */
+.valid,.invalid {
+    border: none;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    width: 100%;
+}
+
+.result-icon {
+    width: 5rem;
+    height: 5rem;
+}
+
+.result-content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding-left: 1rem;
+}
+
+.valid .result-icon::before {
+    content: "✅";
+}
+
+.valid .result-title {
+    color: #00a608;
+}
+
+.invalid .result-icon::before {
+    content: "❌";
+}
+
+.invalid .result-title {
+    color: #ff4444;
+}
+
+/* Responsive Design */
+@media (max-width: 30rem) {
+    .title {
+        font-size: 0.875rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .search-input,
+    .search-button {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+    
+    .section-title {
+        font-size: 1.125rem;
+    }
+    
+    .result-title {
+        font-size: 1.125rem;
+    }
+    
+    .result-message,
+    .welcome-text {
+        font-size: 0.875rem;
+    }
+    
+    .header {
+        padding: 0.75rem 1rem 0.75rem 1rem;
+    }
+    
+    .main-content {
+        padding: 0 1rem 0 1rem;
+    }
+    
+    .search-container {
+        margin-top: 0.5rem;
+    }
+} 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrabble Word Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <span class="title">SCRABBLE WORD CHECKER</span>
+            <span class="subtitle">find word</span>
+            <div class="search-container">
+                <input type="text" id="wordInput" class="search-input" placeholder="Enter a word...">
+                <button id="checkBtn" class="search-button">Check</button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Loading Section -->
+            <div id="loadingSection" class="loading-section">
+                <div class="loading-card">
+                    <div class="loading-icon">⏳</div>
+                    <p class="loading-text">Loading word dictionary...</p>
+                </div>
+            </div>
+
+            <!-- Result Section -->
+            <div id="resultSection" class="result-section" style="display: none;">
+                <div id="resultCard" class="result-card">
+                    <div id="resultIcon" class="result-icon"></div>
+                    <div class="result-content">
+                        <h2 id="resultTitle" class="result-title"></h2>
+                        <p id="resultMessage" class="result-message"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="welcomeSection" class="welcome-section">
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 
