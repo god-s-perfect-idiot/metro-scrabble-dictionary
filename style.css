@@ -293,7 +293,7 @@ body {
 }
 
 .anagrams-title {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 100;
     margin-bottom: 0.25rem;
     color: #008A00;
@@ -310,8 +310,8 @@ body {
 
 .anagram-item {
     color: #ffffff;
-    font-size: 1rem;
-    font-weight: 200;
+    font-size: 1.5rem;
+    font-weight: 100;
     transition: all 0.2s ease;
     padding-bottom: 0.5rem;
 }
