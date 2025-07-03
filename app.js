@@ -137,6 +137,61 @@ function checkWordWithApi(word, callback) {
     xhr.send();
 }
 
+// Fetch anagrams using API
+function fetchAnagrams(word, callback) {
+    if (!word || word.length === 0) {
+        callback([]);
+        return;
+    }
+    
+    if (!apiReady) {
+        console.log('API not ready yet');
+        callback([]);
+        return;
+    }
+    
+    var cleanWord = word.trim().toLowerCase();
+    console.log('Fetching anagrams for:', cleanWord);
+    
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', apiBaseUrl + '/anagrams/' + encodeURIComponent(cleanWord), true);
+    
+    // Set timeout to 5 seconds
+    xhr.timeout = 5000;
+    
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                try {
+                    var response = JSON.parse(xhr.responseText);
+                    var anagrams = response.anagrams || [];
+                    
+                    console.log('Anagrams for "' + cleanWord + '":', anagrams);
+                    callback(anagrams);
+                } catch (error) {
+                    console.error('Error parsing anagrams response:', error);
+                    callback([]);
+                }
+            } else {
+                console.error('Anagrams API request failed. Status:', xhr.status);
+                callback([]);
+            }
+        }
+    };
+    
+    xhr.onerror = function() {
+        console.error('Network error during anagrams API request');
+        callback([]);
+    };
+    
+    xhr.ontimeout = function() {
+        console.error('Anagrams API request timeout');
+        callback([]);
+    };
+    
+    xhr.send();
+}
+
 // Show result
 function showResult(word, isValid) {
     var resultSection = document.getElementById('resultSection');
@@ -167,9 +222,60 @@ function showResult(word, isValid) {
 function showWelcome() {
     var resultSection = document.getElementById('resultSection');
     var welcomeSection = document.getElementById('welcomeSection');
+    var anagramsSection = document.getElementById('anagramsSection');
     
     resultSection.style.display = 'none';
+    anagramsSection.style.display = 'none';
     welcomeSection.style.display = 'block';
+}
+
+// Show anagrams
+function showAnagrams(word, anagrams) {
+    var anagramsSection = document.getElementById('anagramsSection');
+    var anagramsList = document.getElementById('anagramsList');
+    var anagramsLoader = document.getElementById('anagramsLoader');
+    
+    // Hide loader
+    anagramsLoader.style.display = 'none';
+    
+    // Clear previous anagrams
+    anagramsList.innerHTML = '';
+    
+    if (anagrams.length === 0) {
+        anagramsList.innerHTML = '<div class="no-anagrams">No anagrams found</div>';
+    } else {
+        anagrams.forEach(function(anagram) {
+            var anagramItem = document.createElement('div');
+            anagramItem.className = 'anagram-item';
+            anagramItem.textContent = anagram;
+            anagramsList.appendChild(anagramItem);
+        });
+    }
+    
+    // Show anagrams section
+    anagramsSection.style.display = 'block';
+}
+
+// Show anagrams loader
+function showAnagramsLoader() {
+    var anagramsSection = document.getElementById('anagramsSection');
+    var anagramsList = document.getElementById('anagramsList');
+    var anagramsLoader = document.getElementById('anagramsLoader');
+    
+    // Clear previous anagrams
+    anagramsList.innerHTML = '';
+    
+    // Show loader
+    anagramsLoader.style.display = 'block';
+    
+    // Show anagrams section
+    anagramsSection.style.display = 'block';
+}
+
+// Hide anagrams
+function hideAnagrams() {
+    var anagramsSection = document.getElementById('anagramsSection');
+    anagramsSection.style.display = 'none';
 }
 
 // Check word function
@@ -195,6 +301,14 @@ function checkWord() {
     
     checkWordWithApi(word, function(isValid) {
         showResult(word, isValid);
+        
+        // Show anagrams loader
+        showAnagramsLoader();
+        
+        // Fetch and show anagrams after showing result
+        fetchAnagrams(word, function(anagrams) {
+            showAnagrams(word, anagrams);
+        });
         
         // Restore button
         checkBtn.textContent = originalText;
