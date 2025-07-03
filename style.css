@@ -285,6 +285,7 @@ body {
     border: border;
     background-color: #000000;
     transition: all 0.2s ease;
+    padding: 0.5rem;
 }
 
 .anagrams-title {
@@ -314,7 +315,7 @@ body {
 .no-anagrams {
     color: #999999;
     font-style: italic;
-    text-align: center;
+    text-align: left;
     font-size: 0.875rem;
 }
 
