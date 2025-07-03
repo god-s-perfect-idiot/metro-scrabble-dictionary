@@ -29,7 +29,7 @@ body {
     text-align: left;
     border-bottom: none;
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     width: 100%;
     flex-direction: column;
 }
@@ -201,10 +201,11 @@ body {
 .valid,.invalid {
     border: none;
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     justify-content: start;
     width: 100%;
 }
+
 
 .result-icon {
     width: 5rem;
@@ -214,7 +215,7 @@ body {
 .result-content {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     justify-content: center;
     padding-left: 1rem;
 }
