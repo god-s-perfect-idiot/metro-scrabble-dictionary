@@ -118,7 +118,7 @@ body {
 }
 
 .loading-card {
-    border: 2px solid #ffffff;
+    border: none;
     text-align: center;
     background-color: #000000;
     transition: all 0.2s ease;
@@ -131,10 +131,11 @@ body {
 }
 
 .loading-text {
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: 200;
     color: #cccccc;
     line-height: 1.4;
+    margin-top: 5rem;
 }
 
 /* Result Section */
