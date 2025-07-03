@@ -47,7 +47,7 @@ body {
 
 .subtitle {
     font-size: 3rem;
-    font-weight: 200;
+    font-weight: 100;
     margin-bottom: 1rem;
 }
 
@@ -141,7 +141,7 @@ body {
 
 /* Result Section */
 .result-section {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .result-card {
@@ -149,7 +149,7 @@ body {
     text-align: center;
     background-color: #000000;
     transition: all 0.2s ease;
-    padding-top: 2rem;
+    padding-top: 1rem;
 }
 
 .result-icon {
@@ -289,12 +289,12 @@ body {
     border: border;
     background-color: #000000;
     transition: all 0.2s ease;
-    padding: 0.5rem;
+    margin: 0.5rem;
 }
 
 .anagrams-title {
     font-size: 1.5rem;
-    font-weight: 300;
+    font-weight: 100;
     margin-bottom: 1rem;
     color: #008A00;
     text-transform: lowercase;
