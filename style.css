@@ -64,10 +64,11 @@ body {
 
 .search-input {
     flex: 1;
-    padding: 0.9375rem;
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
     font-size: 1.125rem;
     background-color: black;
-    border: 1px solid white;
+    border: 1.5px solid white;
     color: #ffffff;
     border-radius: 0;
     outline: none;
@@ -87,7 +88,7 @@ body {
     font-weight: 400;
     background-color: black;
     color: #ffffff;
-    border: 1px solid white;
+    border: 1.5px solid white;
     cursor: pointer;
     text-transform: capitalize;
     letter-spacing: 0.0625rem;
@@ -246,7 +247,10 @@ body {
     .search-input,
     .search-button {
         font-size: 0.9rem;
-        padding: 0.5rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        padding-top: 0.45rem;
+        padding-bottom: 0.45rem;
         font-weight: 300;
     }
     
