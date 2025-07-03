@@ -295,7 +295,7 @@ body {
 .anagrams-title {
     font-size: 1.5rem;
     font-weight: 100;
-    margin-bottom: 1rem;
+    margin-bottom: 0.25rem;
     color: #008A00;
     text-transform: lowercase;
     letter-spacing: 0.0625rem;
