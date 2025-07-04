@@ -68,7 +68,7 @@ body {
     padding-right: 0.9375rem;
     font-size: 1.125rem;
     background-color: black;
-    border: 1.5px solid white;
+    border: 2px solid white;
     color: #ffffff;
     border-radius: 0;
     outline: none;
@@ -88,7 +88,7 @@ body {
     font-weight: 400;
     background-color: black;
     color: #ffffff;
-    border: 1.5px solid white;
+    border: 2px solid white;
     cursor: pointer;
     text-transform: capitalize;
     letter-spacing: 0.0625rem;
@@ -249,9 +249,10 @@ body {
         font-size: 0.9rem;
         padding-left: 0.5rem;
         padding-right: 0.5rem;
-        padding-top: 0.45rem;
-        padding-bottom: 0.45rem;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
         font-weight: 300;
+        text-transform: lowercase;
     }
     
     .section-title {
